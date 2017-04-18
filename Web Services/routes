@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Multiply two integer numbers
+GET     /multiplicacion/:a/:b    controllers.HomeController.getMultiplicacion(a: Int,b: Int)
+
+# Know if a word is a palyndrome
+GET /palindromo/:a 				controllers.HomeController.getPalindromo(a: String)
+
+# Convert dollars to Mexican Pesos
+GET /dolaresAPesos/:a 				controllers.HomeController.dolaresAPesos(a: Double)
+
+# Convert Farenheit degrees to Celsius degrees
+GET /farenheitACentigrados/:a		controllers.HomeController.farenheitACentigrados(a: Double)
+
+# Get the capital of an european country
+GET /capital/:a				controllers.HomeController.capitalEuropea(a: String)
+
+# Get the coordinates for the mexican embassy in a given european country
+GET /embajada/:a				controllers.HomeController.embajadaMexico(a: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
